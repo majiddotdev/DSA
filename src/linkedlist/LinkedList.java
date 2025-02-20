@@ -138,6 +138,20 @@ public class LinkedList {
         head = previous;
     }
 
+    Boolean findNode(int data) {
+        Node temp = head;
+        int count = 0;
+        while (temp != null) {
+            if (temp.data == data) {
+                System.out.println("the data is present at " + count);
+                return true;
+            }
+                temp = temp.next;
+                count ++;
+        }
+        return false;
+    }
+
 
     public static void main(String[] args) {
         LinkedList l = new LinkedList();
@@ -180,6 +194,9 @@ public class LinkedList {
         System.out.println("======================= reverse a linked list");
         l.reverseALinkedList();
         l.printList();
+
+        System.out.println(l.findNode(4));
+
 
     }
 }
