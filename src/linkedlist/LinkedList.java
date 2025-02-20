@@ -80,6 +80,14 @@ public class LinkedList {
         }
     }
 
+    void deleteAtFirst() {
+        if (head == null) {
+            System.out.println("Linked List is Empty");
+            return;
+        }
+        head = head.next;
+    }
+
 
     public static void main(String[] args) {
         LinkedList l = new LinkedList();
@@ -94,6 +102,8 @@ public class LinkedList {
         l.insetAtLast(10);
 //        l.printList();
         l.InsetAtParticularIndex(100, 2);
+//        l.printList();
+        l.deleteAtFirst();
         l.printList();
     }
 }
