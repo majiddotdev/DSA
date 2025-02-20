@@ -94,16 +94,34 @@ public class LinkedList {
             System.out.println("Linked List is Empty");
             return;
         }
-        if(head.next == null){
+        if (head.next == null) {
             System.out.println("Node Delete with data " + head.data);
             head = null;
             return;
         }
         Node temp = head;
-        while (temp.next.next != null){
+        while (temp.next.next != null) {
             temp = temp.next;
         }
         temp.next = null;
+    }
+
+    void deleteAtParticularIndex(int index) {
+        if (index > sizeOfLinkedList()) {
+            System.out.println("index is out of reach " + index);
+            return;
+        }
+        Node temp = head;
+        int count = 0;
+        while (temp.next != null && count == index -1) {
+            temp = temp.next;
+            count ++;
+
+        }
+        if (temp.next != null) {
+            temp.next = temp.next.next;
+        }
+
     }
 
 
@@ -142,6 +160,8 @@ public class LinkedList {
         l.printList();
 
         System.out.println("==================== delete at particular index");
+        l.deleteAtParticularIndex(1);
+        l.printList();
 
     }
 }
