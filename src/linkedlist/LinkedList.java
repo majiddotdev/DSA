@@ -89,21 +89,59 @@ public class LinkedList {
     }
 
 
+    void deleteLast() {
+        if (head == null) {
+            System.out.println("Linked List is Empty");
+            return;
+        }
+        if(head.next == null){
+            System.out.println("Node Delete with data " + head.data);
+            head = null;
+            return;
+        }
+        Node temp = head;
+        while (temp.next.next != null){
+            temp = temp.next;
+        }
+        temp.next = null;
+    }
+
+
     public static void main(String[] args) {
         LinkedList l = new LinkedList();
+        System.out.println("================== add nodes ");
         l.insetData(1);
         l.insetData(2);
         l.insetData(3);
         l.insetData(4);
-//        l.printList();
-//        System.out.println(l.sizeOfLinkedList());
+
+        System.out.println("================== print nodes ");
+        l.printList();
+
+        System.out.println("==================  node size ");
+        System.out.println(l.sizeOfLinkedList());
+
+        System.out.println("==================  insert at first ");
         l.insertAtFirst(9);
-//        l.printList();
+        l.printList();
+
+        System.out.println("==================  insert at last ");
         l.insetAtLast(10);
-//        l.printList();
+        l.printList();
+
+        System.out.println("==================  insert at particular Index ");
         l.InsetAtParticularIndex(100, 2);
-//        l.printList();
+        l.printList();
+
+        System.out.println("==================  insert at delete first ");
         l.deleteAtFirst();
         l.printList();
+
+        System.out.println("================== delete last");
+        l.deleteLast();
+        l.printList();
+
+        System.out.println("==================== delete at particular index");
+
     }
 }
