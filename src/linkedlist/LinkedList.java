@@ -54,13 +54,30 @@ public class LinkedList {
 
     }
 
-    void insetAtLast(int data){
+    void insetAtLast(int data) {
         Node node = new Node(data);
         Node temp = head;
-        while (temp.next != null){
+        while (temp.next != null) {
             temp = temp.next;
         }
         temp.next = node;
+    }
+
+    void InsetAtParticularIndex(int data, int index) {
+        Node node = new Node(data);
+        Node temp = head;
+        int count = 0;
+        while (temp != null) {
+            if (count == index - 1) {
+                node.next = temp.next;
+                temp.next = node;
+                return;
+            } else {
+                count++;
+                temp = temp.next;
+
+            }
+        }
     }
 
 
@@ -75,6 +92,8 @@ public class LinkedList {
         l.insertAtFirst(9);
 //        l.printList();
         l.insetAtLast(10);
+//        l.printList();
+        l.InsetAtParticularIndex(100, 2);
         l.printList();
     }
 }
