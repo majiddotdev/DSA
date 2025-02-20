@@ -113,15 +113,29 @@ public class LinkedList {
         }
         Node temp = head;
         int count = 0;
-        while (temp.next != null && count == index -1) {
+        while (temp.next != null && count == index - 1) {
             temp = temp.next;
-            count ++;
+            count++;
 
         }
         if (temp.next != null) {
             temp.next = temp.next.next;
         }
 
+    }
+
+    void reverseALinkedList() {
+        Node current = head;
+        Node previous = null;
+        Node next;
+        while (current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+
+        }
+        head = previous;
     }
 
 
@@ -161,6 +175,10 @@ public class LinkedList {
 
         System.out.println("==================== delete at particular index");
         l.deleteAtParticularIndex(1);
+        l.printList();
+
+        System.out.println("======================= reverse a linked list");
+        l.reverseALinkedList();
         l.printList();
 
     }
