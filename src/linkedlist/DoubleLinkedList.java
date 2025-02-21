@@ -114,6 +114,19 @@ public class DoubleLinkedList {
 
     }
 
+    void deleteAtFirst(){
+        if(head == null){
+            System.out.println("list is empty");
+            return;
+        }
+        else {
+            Node temp = head;
+            head = head.next;
+            temp.next = null;
+        }
+
+    }
+
 
     public static void main(String[] args) {
         DoubleLinkedList dll = new DoubleLinkedList();
@@ -142,6 +155,13 @@ public class DoubleLinkedList {
 
         System.out.println("========================== insert last =============================");
         dll.insertAtIndex(80, 2);
+
+        System.out.println("=========================== display Nodes");
+        dll.displayDll();
+
+        System.out.println("=========================== delete at first");
+        dll.deleteAtFirst();
+
 
         System.out.println("=========================== display Nodes");
         dll.displayDll();
