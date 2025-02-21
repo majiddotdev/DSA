@@ -23,26 +23,26 @@ public class DoubleLinkedList {
 
     void insertData(int data) {
         Node node = new Node(data);
-       if(head == null){
-           head = node;
-           return;
-       }else {
-           Node temp = head;
-           while (temp.next != null){
-               temp = temp.next;
-           }
-           temp.next = node;
-           node.back = temp;
-       }
+        if (head == null) {
+            head = node;
+            return;
+        } else {
+            Node temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = node;
+            node.back = temp;
+        }
     }
 
-    void displayDll(){
-        if(head == null){
+    void displayDll() {
+        if (head == null) {
             System.out.println("list is empty ");
             return;
         }
         Node temp = head;
-        while (temp != null){
+        while (temp != null) {
             System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
@@ -50,12 +50,27 @@ public class DoubleLinkedList {
         System.out.println();
     }
 
-    void insertFirst(int data){
+    void insertFirst(int data) {
         Node newNode = new Node(data);
         Node temp = head;
         head = newNode;
         head.next = temp;
         temp.back = head;
+    }
+
+    void insertLast(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            return;
+        } else {
+            Node temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+            newNode.back = temp;
+        }
     }
 
 
@@ -75,7 +90,14 @@ public class DoubleLinkedList {
         System.out.println("=========================== display Nodes");
         dll.displayDll();
 
+        System.out.println("========================== insert last");
+        dll.insertLast(50);
+
+        System.out.println("=========================== display Nodes");
+        dll.displayDll();
 
 
     }
+
+
 }
