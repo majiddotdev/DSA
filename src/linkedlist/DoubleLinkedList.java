@@ -84,17 +84,19 @@ public class DoubleLinkedList {
         System.out.println("=========================== display Nodes");
         dll.displayDll();
 
-        System.out.println("========================== insert  first");
+        System.out.println("========================== insert  first ======================");
         dll.insertFirst(100);
 
         System.out.println("=========================== display Nodes");
         dll.displayDll();
 
-        System.out.println("========================== insert last");
+        System.out.println("========================== insert last =============================");
         dll.insertLast(50);
 
         System.out.println("=========================== display Nodes");
         dll.displayDll();
+
+
 
 
     }
