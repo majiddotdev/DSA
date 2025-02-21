@@ -50,6 +50,21 @@ public class DoubleLinkedList {
         System.out.println();
     }
 
+    int size() {
+        int count = 0;
+        if (head == null) {
+            System.out.println("double linked list is empty");
+            return count;
+        } else {
+            Node temp = head;
+            while (temp != null) {
+                count++;
+                temp = temp.next;
+            }
+        }
+        return count;
+    }
+
     void insertFirst(int data) {
         Node newNode = new Node(data);
         Node temp = head;
@@ -73,6 +88,32 @@ public class DoubleLinkedList {
         }
     }
 
+    void insertAtIndex(int data, int index) {
+        if (index < 0 || index > size()) {
+            System.out.println("index is out of reach");
+            return;
+        } else {
+            Node newNode = new Node(data);
+            Node temp = head;
+            int count = 0;
+            while (temp != null) {
+                if (count == index - 1) {
+                    newNode.next = temp.next;
+                    if (temp.next != null) {
+                        temp.next.back = newNode;
+                    }
+                    temp.next = newNode;
+                    newNode.back = temp;
+                    return;
+                } else {
+                    temp = temp.next;
+                    count++;
+                }
+            }
+        }
+
+    }
+
 
     public static void main(String[] args) {
         DoubleLinkedList dll = new DoubleLinkedList();
@@ -83,6 +124,8 @@ public class DoubleLinkedList {
 
         System.out.println("=========================== display Nodes");
         dll.displayDll();
+
+        System.out.println("========================== Size of double Linked list =============================" + dll.size());
 
         System.out.println("========================== insert  first ======================");
         dll.insertFirst(100);
@@ -97,6 +140,11 @@ public class DoubleLinkedList {
         dll.displayDll();
 
 
+        System.out.println("========================== insert last =============================");
+        dll.insertAtIndex(80, 2);
+
+        System.out.println("=========================== display Nodes");
+        dll.displayDll();
 
 
     }
