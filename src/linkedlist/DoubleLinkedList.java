@@ -47,14 +47,32 @@ public class DoubleLinkedList {
             temp = temp.next;
         }
         System.out.print("null");
+        System.out.println();
+    }
+
+    void insertFirst(int data){
+        Node newNode = new Node(data);
+        Node temp = head;
+        head = newNode;
+        head.next = temp;
+        temp.back = head;
     }
 
 
     public static void main(String[] args) {
         DoubleLinkedList dll = new DoubleLinkedList();
+        System.out.println("=========================== insert Node");
         dll.insertData(2);
         dll.insertData(3);
         dll.insertData(6);
+
+        System.out.println("=========================== display Nodes");
+        dll.displayDll();
+
+        System.out.println("========================== insert  first");
+        dll.insertFirst(100);
+
+        System.out.println("=========================== display Nodes");
         dll.displayDll();
 
 
