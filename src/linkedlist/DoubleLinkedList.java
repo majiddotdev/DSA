@@ -114,12 +114,11 @@ public class DoubleLinkedList {
 
     }
 
-    void deleteAtFirst(){
-        if(head == null){
+    void deleteAtFirst() {
+        if (head == null) {
             System.out.println("list is empty");
             return;
-        }
-        else {
+        } else {
             Node temp = head;
             head = head.next;
             temp.next = null;
@@ -146,6 +145,19 @@ public class DoubleLinkedList {
         temp.next = null;
     }
 
+    void reverse() {
+        Node current = head;
+        Node previous = null;
+        Node next;
+        while (current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+
+        }
+        head = previous;
+    }
 
 
     public static void main(String[] args) {
@@ -187,6 +199,12 @@ public class DoubleLinkedList {
 
         System.out.println("=========================== delete at last ========================");
         dll.deleteAtLast();
+
+        System.out.println("=========================== display Nodes");
+        dll.displayDll();
+
+        System.out.println("=========================== reverse  ========================");
+        dll.reverse();
 
         System.out.println("=========================== display Nodes");
         dll.displayDll();
