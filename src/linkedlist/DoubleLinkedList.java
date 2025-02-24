@@ -147,16 +147,15 @@ public class DoubleLinkedList {
 
     void reverse() {
         Node current = head;
-        Node previous = null;
-        Node next;
-        while (current != null) {
-            next = current.next;
-            current.next = previous;
-            previous = current;
-            current = next;
+        Node temp = null;
 
+        while (current != null) {
+            temp = current.back;
+            current.back = current.next;
+            current.next = temp;
+            current = current.back;
         }
-        head = previous;
+        head = temp.back;
     }
 
 
