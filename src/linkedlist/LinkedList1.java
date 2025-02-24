@@ -1,5 +1,8 @@
 package linkedlist;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class LinkedList1 {
 
     private Node head;
@@ -92,22 +95,47 @@ public class LinkedList1 {
 
     }
 
+    boolean detectLoop() {
+        Node slow = head, fast = head;
+
+        while (fast != null && fast.next != null) {
+            System.out.println("Before move - Slow: " + slow.data + ", Fast: " + fast.data);
+
+            slow = slow.next;
+            fast = fast.next.next;
+
+            System.out.println("After move - Slow: " + slow.data + ", Fast: " + (fast != null ? fast.data : "null"));
+
+            if (fast == slow) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+
     public static void main(String[] args) {
         LinkedList1 list1 = new LinkedList1();
         list1.insertData(12);
         list1.insertData(13);
         list1.insertData(14);
+        list1.insertData(100);
         list1.insertData(18);
         list1.insertData(100);
 
+
         System.out.println("=================size===========" + list1.size());
         list1.display();
-//        System.out.println();
-//        list1.reverse();
-//        list1.display();
-//        System.out.println();
+        System.out.println();
+        list1.reverse();
+        list1.display();
+        System.out.println();
         System.out.println();
         System.out.println(list1.median().data);
+        System.out.println("Detect a loop in the linked list");
+        System.out.println(list1.detectLoop());
 
     }
 }
