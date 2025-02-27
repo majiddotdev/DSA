@@ -2,7 +2,7 @@ package StringDSA;
 
 import java.util.*;
 
-public interface FindDuplicateCharactersInAString {
+public class FindDuplicateCharactersInAString {
         public static void main(String[] args) {
             String str = "programming";
 
