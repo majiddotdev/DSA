@@ -16,6 +16,11 @@ public class CounttheNumberofVowelsandConsonantsinaString {
                 consonant++;
             };
         }
+
+        long vowels = str.chars()
+                .filter(ch -> "aeiou".indexOf(ch) != -1)
+                .count();
+        System.out.println(vowels);
         System.out.println(vowel  + " vowel");
         System.out.println(consonant + " consonant");
     }
