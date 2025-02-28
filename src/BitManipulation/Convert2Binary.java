@@ -9,6 +9,6 @@ public class Convert2Binary {
            else  newNumber.append(0);
            number = number / 2;
         }
-        System.out.println(newNumber.reverse().toString());
+        System.out.println(newNumber.reverse());
     }
 }
