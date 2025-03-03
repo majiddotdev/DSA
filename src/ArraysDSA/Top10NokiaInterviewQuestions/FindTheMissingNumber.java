@@ -1,11 +1,15 @@
 package ArraysDSA.Top10NokiaInterviewQuestions;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class FindTheMissingNumber {
     public static void main(String[] args) {
 
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 9, 10};
         int n = 10;
         System.out.println(findTheMissingNumber(arr, n));
+//        Arrays.stream(arr).sum();
 
     }
 
