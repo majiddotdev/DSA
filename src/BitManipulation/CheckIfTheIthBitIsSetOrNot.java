@@ -3,7 +3,7 @@ package BitManipulation;
 public class CheckIfTheIthBitIsSetOrNot {
     public static void main(String[] args) {
         int number = 13;
-        int i = 3;
+        int i = 2;
         Boolean b = checkIfTheIthBitIsSetOrNot(number, i);
         System.out.println(b);
 
@@ -19,7 +19,8 @@ public class CheckIfTheIthBitIsSetOrNot {
             number = number / 2;
         }
         System.out.println(stringBuilder);
-        char c = stringBuilder.reverse().charAt(i);
+        char c = stringBuilder.charAt(i);
+
         if (c - '0' == 0) {
             return false;
         }
