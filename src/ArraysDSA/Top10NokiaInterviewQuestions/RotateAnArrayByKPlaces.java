@@ -2,7 +2,7 @@ package ArraysDSA.Top10NokiaInterviewQuestions;
 
 import java.util.Arrays;
 
-public interface RotateAnArrayByKPlaces {
+public class RotateAnArrayByKPlaces {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
         int k = 3 % arr.length;
