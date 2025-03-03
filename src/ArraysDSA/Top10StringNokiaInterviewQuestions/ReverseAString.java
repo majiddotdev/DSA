@@ -1,6 +1,6 @@
 package ArraysDSA.Top10StringNokiaInterviewQuestions;
 
-public interface ReverseAString {
+public class ReverseAString {
     public static void main(String[] args) {
         String str = "majidsaba" , str1 = "";
 //        StringBuilder stringBuffer = new StringBuilder(str);
