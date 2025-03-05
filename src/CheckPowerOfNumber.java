@@ -1,6 +1,6 @@
 public class CheckPowerOfNumber {
     public static void main(String[] args) {
-        int number = 8;
+        int number = 128;
         System.out.println(checkNumber(number));
     }
 
