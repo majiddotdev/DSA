@@ -9,7 +9,7 @@ public class CountClassObjects {
 
     public static void main(String[] args) {
         CountClassObjects countClassObjects = new CountClassObjects();
-        System.out.println(count);
+        System.out.println(CountClassObjects.count);
         CountClassObjects countClassObjects1 = new CountClassObjects();
         System.out.println(count);
     }
