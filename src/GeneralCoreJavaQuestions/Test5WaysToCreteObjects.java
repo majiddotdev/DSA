@@ -1,3 +1,5 @@
+package GeneralCoreJavaQuestions;
+
 public class Test5WaysToCreteObjects implements  Cloneable{
     Test5WaysToCreteObjects() {
         System.out.println("Object created");
