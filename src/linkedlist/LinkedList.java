@@ -146,10 +146,26 @@ public class LinkedList {
                 System.out.println("the data is present at " + count);
                 return true;
             }
-                temp = temp.next;
-                count ++;
+            temp = temp.next;
+            count++;
         }
         return false;
+    }
+
+    int sumNodes() {
+        int data = 0;
+        if (head == null) {
+            System.out.println("the linked list is empty !");
+            return 0;
+        } else {
+            Node temp = head;
+            while (temp != null) {
+                data += temp.data;
+                temp = temp.next;
+            }
+        }
+
+        return data;
     }
 
 
@@ -197,6 +213,9 @@ public class LinkedList {
 
         System.out.println(l.findNode(4));
 
+
+        System.out.println("======================= add nodes of linked list");
+        System.out.println(l.sumNodes());
 
     }
 }
