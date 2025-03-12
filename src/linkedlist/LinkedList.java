@@ -160,7 +160,7 @@ public class LinkedList {
         } else {
             Node temp = head;
             while (temp != null) {
-                data += temp.data;
+                data = temp.data;
                 temp = temp.next;
             }
         }
