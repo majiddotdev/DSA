@@ -6,18 +6,34 @@ import java.util.Arrays;
 public class Rearrangethearrayinalternatingpositiveandnegativeitems {
     public static void main(String[] args) {
         int[] arr = {3, 1, -2, -5, 2, -4};
-        int[] newArray = new int[arr.length];
-        int postindex = 0 , nagativeIndex = 1;
-        for(int i : arr){
-            if(i > 0){
-                newArray[postindex] = i;
-                postindex = postindex + 2;
-            }else {
-                newArray[nagativeIndex] = i;
-                nagativeIndex = nagativeIndex + 2;
-            }
-        }
-        System.out.println(Arrays.toString(newArray));
+        //if the positive and nagative numbers are different;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //if postive and nagative numbers are same
+//        int[] newArray = new int[arr.length];
+//        int postindex = 0 , nagativeIndex = 1;
+//        for(int i : arr){
+//            if(i > 0){
+//                newArray[postindex] = i;
+//                postindex = postindex + 2;
+//            }else {
+//                newArray[nagativeIndex] = i;
+//                nagativeIndex = nagativeIndex + 2;
+//            }
+//        }
+//        System.out.println(Arrays.toString(newArray));
 
 //        int[] newArry1 = new int[arr.length / 2];
 //        int[] newArry2 = new int[arr.length / 2];
