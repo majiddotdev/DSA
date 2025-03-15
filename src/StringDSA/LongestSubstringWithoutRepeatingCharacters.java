@@ -15,7 +15,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 }
             }
         }
-        System.out.println(newStr);
+        System.out.println(newStr.length());
     }
 
     private static boolean checkUniqueness(String substring) {
