@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class bracketBalance {
     public static void main(String[] args) {
-        String s = "(({[]}))";
+        String s = "((]{[]}))";
         Stack<Character> st = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
