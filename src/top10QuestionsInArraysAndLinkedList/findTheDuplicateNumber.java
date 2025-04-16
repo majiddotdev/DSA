@@ -1,6 +1,8 @@
 package top10QuestionsInArraysAndLinkedList;
 
 import java.util.HashMap;
+import java.util.Random;
+import java.util.stream.Stream;
 
 public class findTheDuplicateNumber {
     public static void main(String[] args) {
