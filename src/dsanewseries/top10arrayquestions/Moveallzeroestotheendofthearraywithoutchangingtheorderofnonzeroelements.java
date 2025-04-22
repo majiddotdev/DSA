@@ -1,0 +1,4 @@
+package dsanewseries.top10arrayquestions;
+
+public class Moveallzeroestotheendofthearraywithoutchangingtheorderofnonzeroelements {
+}
