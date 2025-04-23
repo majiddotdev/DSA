@@ -7,8 +7,8 @@ public class Mergetwosortedarrays {
                        {7 , 8 , 9}};
 
         for(int i = 2 ; i >= 0 ; i --){
-            for(int j = 0 ; j <3 ; j ++){
-                System.out.print(arr[i][j] + " ");
+            for(int j = 0 ; j <=2 ; j ++){
+                System.out.print(arr[j][i] + " ");
             }
             System.out.println();
         }
