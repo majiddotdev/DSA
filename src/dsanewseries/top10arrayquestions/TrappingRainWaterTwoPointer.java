@@ -1,5 +1,6 @@
 package dsanewseries.top10arrayquestions;
 
+
 public class TrappingRainWaterTwoPointer {
     public static void main(String[] args) {
         int[] arr = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
@@ -14,8 +15,9 @@ public class TrappingRainWaterTwoPointer {
             right[i] = Math.max(arr[i], right[i + 1]);
         }
         for(int i = 0 ; i < length ; i++){
-            sum += (Math.max(left[i] , right[i]) - arr[i]);
+            sum += (Math.min(left[i] , right[i]) - arr[i]);
         }
+
         System.out.println(sum);
     }
 }
