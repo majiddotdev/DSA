@@ -2,7 +2,7 @@ package TwoPointer;
 
 public class ReverseVowelsOfAString {
     public static void main(String[] args) {
-        String str = "sabamajid";
+        String str = "sabamaaaAAZAAAAjid";
         StringBuilder sb = new StringBuilder(str);
         int left = 0, right = str.length() - 1;
         while (left < right){
@@ -21,7 +21,8 @@ public class ReverseVowelsOfAString {
 
     }
 
-    public static Boolean isVowel(char c){
+    public static Boolean isVowel(char c1){
+        char c = Character.toLowerCase(c1);
         return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
 }
