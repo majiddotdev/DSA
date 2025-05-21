@@ -1,10 +1,11 @@
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class CaptilizeAtParticularIndex {
     public static void main(String[] args) {
         String str = "hi majid how are               you                                          ";
 
-        Arrays.stream(str.trim().toLowerCase().split("\\s+")).map(e->{
+       String newstr =  Arrays.stream(str.trim().toLowerCase().split("\\s+")).map(e->{
             StringBuilder stringBuilder = new StringBuilder();
             for(int i = 0 ; i< e.length() ; i++){
                 if(i % 2 == 0){
@@ -16,7 +17,8 @@ public class CaptilizeAtParticularIndex {
             }
             return stringBuilder.toString();
 
-        }).forEach(System.out::println);
+        }).collect(Collectors.joining(" "));
+        System.out.println(newstr);
 
 
 
