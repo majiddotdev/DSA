@@ -7,12 +7,10 @@ public class GenerateRandomNumber {
     public static void main(String[] args) {
 
         Random random = new Random();
-        Stream<String> testData = Stream.generate(() -> {
-            int number = random.nextInt(50) ;
+        Stream.generate(() -> {
+            int number = random.nextInt(50);
             return "Data-" + number;
-        });
-        testData.limit(5).forEach(System.out::println);
-
+        }).limit(5).forEach(System.out::println);
 
 
     }
