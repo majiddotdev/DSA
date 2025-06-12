@@ -12,8 +12,12 @@ public class SortthelistofstudentsusingJavaStreamsandComparator {
                 new Student("Charlie", 19, 78.9),
                 new Student("Eve", 22, 85.5)
         );
-        students.stream().sorted(Comparator.comparing(Student::getName)
-                .thenComparingInt(Student::getAge).thenComparingDouble(Student::getGrade)).forEach(e-> System.out.println(e));
+        students
+                .stream()
+                .sorted(Comparator.comparing(Student::getName)
+                .thenComparingInt(Student::getAge)
+                        .thenComparingDouble(Student::getGrade))
+                .forEach(System.out::println);
 
     }
 }
