@@ -1,4 +1,4 @@
-package dsabasic;
+package dsabasic.numbers;
 
 public class CheckForPrime {
     public static void main(String[] args) {

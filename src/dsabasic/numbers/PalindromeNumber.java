@@ -1,4 +1,4 @@
-package dsabasic;
+package dsabasic.numbers;
 
 public class PalindromeNumber {
     public static void main(String[] args) {

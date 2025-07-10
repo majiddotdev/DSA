@@ -1,4 +1,4 @@
-package dsabasic;
+package dsabasic.numbers;
 
 import java.util.ArrayList;
 import java.util.List;
