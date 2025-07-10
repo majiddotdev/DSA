@@ -8,7 +8,7 @@ public class SumoffirstNnumbers {
     }
 
     private static int SumoffirstNnumber(int n) {
-        if(n == 1) return n;
+        if(n == 0) return 0;
         return n + SumoffirstNnumber(n - 1);
 
     }
