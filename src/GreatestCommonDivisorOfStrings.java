@@ -3,7 +3,7 @@ import java.util.List;
 
 public class GreatestCommonDivisorOfStrings {
     public static void main(String[] args) {
-        String str1 = "ABCABC", str2 = "CAB";
+        String str1 = "ABCABC", str2 = "CABA";
         List<String> list1 = new ArrayList<>();
         List<String> list2 = new ArrayList<>();
         String newStr = "";
