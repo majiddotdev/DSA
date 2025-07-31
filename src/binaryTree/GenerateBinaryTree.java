@@ -58,13 +58,13 @@ public class GenerateBinaryTree {
 
     }
 
-    int heightOfBinaryTree(Node root){
+    int heightOfBinaryTree(Node root) {
 
-        if(root == null)
+        if (root == null)
             return 0;
         int left = heightOfBinaryTree(root.left);
         int right = heightOfBinaryTree(root.right);
-        return 1 + Math.max(left , right);
+        return 1 + Math.max(left, right);
 
     }
 
@@ -86,5 +86,17 @@ public class GenerateBinaryTree {
 
         System.out.println("height of sub tree");
         System.out.println(generateBinaryTree.heightOfBinaryTree(generateBinaryTree.root));
+
+
+        System.out.println("-9-91-9------------------------------------99999999999999999999999999");
+
+        List<List<Integer>> lists = List.of(
+                List.of(1, 3, 4, 5, 6, 7, 7, 8),
+                List.of(2),
+                List.of(3)
+        );
+
+        lists.stream().flatMap(List::stream).filter(e -> e > 1).forEach(System.out::print);
+
     }
 }
