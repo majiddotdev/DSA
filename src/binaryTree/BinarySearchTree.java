@@ -1,5 +1,8 @@
 package binaryTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
     Node root;
 
@@ -49,13 +52,70 @@ public class BinarySearchTree {
         }
     }
 
-    int sizeOfTree(Node root) {
+    Boolean sameBinaryTrees(Node root1, Node root2) {
+        if (root1 == null && root2 == null) {
+            return true;
+        }
+        if (root1 == null || root2 == null) {
+            return false;
+        }
+        return root1.data == root2.data &&
+                sameBinaryTrees(root1.left, root2.left)
+                && sameBinaryTrees(root1.right, root2.right);
+    }
+
+    int heightOfTree(Node root) {
         if (root == null)
             return 0;
-        int left = sizeOfTree(root.left);
-        int right = sizeOfTree(root.right);
+        int left = heightOfTree(root.left);
+        int right = heightOfTree(root.right);
         return 1 + Math.max(left, right);
     }
+
+    int sizeOfTree(Node root) {
+        if (root == null) return 0;
+        int left = sizeOfTree(root.left);
+        int right = sizeOfTree(root.right);
+        return 1 + left + right;
+    }
+
+    void levelOrderTraversal(Node root) {
+        if (root == null) return;
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node top = queue.poll();
+            System.out.println(top.data);
+            if (top.left != null) {
+                queue.add(top.left);
+            }
+            if (top.right != null) {
+                queue.add(top.right);
+            }
+        }
+
+    }
+
+    Node levelOrderTraversalAndSearch(Node root, int data) {
+        if (root == null) return null;
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node top = queue.poll();
+            if (top.data == data) {
+                return top;
+            }
+            if (top.left != null) {
+                queue.add(top.left);
+            }
+            if (top.right != null) {
+                queue.add(top.right);
+            }
+        }
+        return null;
+
+    }
+
 
     public static void main(String[] args) {
         BinarySearchTree binarySearchTree = new BinarySearchTree();
@@ -72,7 +132,18 @@ public class BinarySearchTree {
         System.out.println(binarySearchTree.searchNode(binarySearchTree.root, 13));
 
 
+        System.out.println(binarySearchTree.heightOfTree(binarySearchTree.root));
+        System.out.println(":===============");
+
         System.out.println(binarySearchTree.sizeOfTree(binarySearchTree.root));
+
+        System.out.println("======================queue");
+
+        binarySearchTree.levelOrderTraversal(binarySearchTree.root);
+
+        System.out.println("======================search");
+
+        System.out.println(binarySearchTree.levelOrderTraversalAndSearch(binarySearchTree.root  , 12));
 
 
     }
