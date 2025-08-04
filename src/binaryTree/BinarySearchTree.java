@@ -2,6 +2,7 @@ package binaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class BinarySearchTree {
     Node root;
@@ -116,6 +117,26 @@ public class BinarySearchTree {
 
     }
 
+    void postOrderTraversal(Node root) {
+        if (root == null) return;
+        Stack<Node> stack1 = new Stack<>();
+        Stack<Node> stack2 = new Stack<>();
+        stack1.push(root);
+        while (!stack1.isEmpty()) {
+            Node top = stack1.pop();
+            stack2.push(top);
+            if (top.left != null) {
+                stack1.push(top.left);
+            }
+            if (top.right != null) {
+                stack1.push(top.right);
+            }
+        }
+        while (!stack2.isEmpty()) {
+            System.out.println(stack2.pop().data);
+        }
+    }
+
 
     public static void main(String[] args) {
         BinarySearchTree binarySearchTree = new BinarySearchTree();
@@ -143,8 +164,11 @@ public class BinarySearchTree {
 
         System.out.println("======================search");
 
-        System.out.println(binarySearchTree.levelOrderTraversalAndSearch(binarySearchTree.root  , 12));
+        System.out.println(binarySearchTree.levelOrderTraversalAndSearch(binarySearchTree.root, 12));
 
+        System.out.println("======================post");
+
+        binarySearchTree.postOrderTraversal(binarySearchTree.root);
 
     }
 }
