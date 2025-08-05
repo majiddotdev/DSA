@@ -137,6 +137,22 @@ public class BinarySearchTree {
         }
     }
 
+    void intOrderTraversal(Node root) {
+        if (root == null) return;
+        Stack<Node> stack1 = new Stack<>();
+        stack1.push(root);
+        while (!stack1.isEmpty()) {
+            Node top = stack1.pop();
+            System.out.println(top.data);
+            if (top.right != null) {
+                stack1.push(top.right);
+            }
+            if (top.left != null) {
+                stack1.push(top.left);
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
         BinarySearchTree binarySearchTree = new BinarySearchTree();
@@ -169,6 +185,10 @@ public class BinarySearchTree {
         System.out.println("======================post");
 
         binarySearchTree.postOrderTraversal(binarySearchTree.root);
+
+        System.out.println("======================in");
+
+        binarySearchTree.intOrderTraversal(binarySearchTree.root);
 
     }
 }
