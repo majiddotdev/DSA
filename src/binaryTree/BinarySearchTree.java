@@ -154,6 +154,37 @@ public class BinarySearchTree {
     }
 
 
+    void levelOrderTraversalInReverse(Node root) {
+        if (root == null) return;
+        Stack<Node> stack = new Stack<>();
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            root = queue.poll();
+            if (root.right != null) queue.add(root.right);
+            if (root.left != null) queue.add(root.left);
+            stack.push(root);
+        }
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop().data);
+        }
+    }
+
+    Node lowestCommonAncestor(int data1, int data2, Node root) {
+        if (root == null) return null;
+        if (root.data < data1 && root.data < data2) {
+            return lowestCommonAncestor(data1, data2, root.right);
+        }
+        if (root.data > data1 && root.data > data2) {
+            return lowestCommonAncestor(data1, data2, root.left);
+        }
+
+        return root;
+
+
+    }
+
+
     public static void main(String[] args) {
         BinarySearchTree binarySearchTree = new BinarySearchTree();
         binarySearchTree.insertNode(12);
@@ -189,6 +220,12 @@ public class BinarySearchTree {
         System.out.println("======================in");
 
         binarySearchTree.intOrderTraversal(binarySearchTree.root);
+
+        System.out.println("=================reverse====");
+        binarySearchTree.levelOrderTraversalInReverse(binarySearchTree.root);
+
+
+        System.out.println(binarySearchTree.lowestCommonAncestor(13, 18, binarySearchTree.root).data);
 
     }
 }
