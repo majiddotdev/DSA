@@ -1,6 +1,5 @@
 package Top10StringInterviewQuestions;
 
-import java.util.Arrays;
 
 public class ValidAnagram {
     public static void main(String[] args) {
