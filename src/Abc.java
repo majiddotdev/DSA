@@ -6,7 +6,7 @@ public class Abc {
     }
 
     public static void main(String[] args) {
-        final Abc abc = new Abc(null , null);
+        Abc abc = new Abc("a", "b");
         System.out.println(abc.i + " " + abc.j);
     }
 }

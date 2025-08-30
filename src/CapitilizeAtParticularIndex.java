@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public class CaptilizeAtParticularIndex {
+public class CapitilizeAtParticularIndex {
     public static void main(String[] args) {
         String str = "hi majid how are               you                                          ";
 
