@@ -4,8 +4,9 @@ import java.util.Arrays;
 
 public class RotateArray {
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5, 6, 7};
-        int k = 9;
+        int[] nums = {1, 2, 3, 4, 5};
+        int k = 18;
+
         k = k % nums.length;
         rotateUpToKplales(0, k - 1, nums);
         rotateUpToKplales(k, nums.length - 1, nums);
